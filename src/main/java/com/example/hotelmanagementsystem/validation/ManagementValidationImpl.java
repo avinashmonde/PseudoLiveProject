@@ -5,20 +5,63 @@ import java.util.regex.Pattern;
 
 public class ManagementValidationImpl implements ManagementValidation {
 
-	Matcher mat = null;
-	Pattern pat = null;
+	Matcher matcher = null;
+	Pattern pattern = null;
 	
 	@Override
-	public Integer loginIdValidation(String userId) {
+	public String registrationIdValidation(String userId) {
 		// TODO Auto-generated method stub
-		pat=Pattern.compile("\\d{1,10}");
-		mat=pat.matcher(userId);
-		if(mat.matches()) {
-			return Integer.parseInt(userId);
+		pattern=Pattern.compile("\\d{1,5}");
+		matcher=pattern.matcher(userId);
+		if(matcher.matches()) {
+			return userId;
 		}
-		return null;
+		else {
+			return null;
+		}
+		
+		
+//		String userId1 = "\\d{1,5}";
+//		pattern = Pattern.compile(userId1);
+//		if(pattern.matcher(userId).matches()) {
+//			return userId1;
+//		}
+//		return null;
+		
 	}
 
+	public String registrationPhoneNoValidation(String phoneNo) {
+		pattern = Pattern.compile("\\d{1,10}");
+		matcher=pattern.matcher(phoneNo);
+		if(matcher.matches()) {
+			return phoneNo;
+		}
+		else {
+			return null;
+		}
+		
+	}
 	
+	public String registrationAddressValidation(String address) {
+		pattern = Pattern.compile("");
+		matcher= pattern.matcher(address);
+		if(matcher.matches()) {
+			return address;
+		}
+		else {
+			return null;
+		}
+	}
+	
+	public String registrationNationality(String nationality) {
+		pattern = Pattern.compile("");
+		matcher=pattern.matcher(nationality);
+		if(matcher.matches()) {
+			return nationality;
+		}
+		else {
+			return null;
+		}
+	}
 	
 }

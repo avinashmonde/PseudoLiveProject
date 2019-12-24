@@ -1,5 +1,7 @@
 package com.example.hotelmanagementsystem.beans;
 
+import java.util.List;
+
 public class ResponseBean {
 
 	private int code;
@@ -9,12 +11,19 @@ public class ResponseBean {
 	private HotelInfoBean hotelInfoBean;
 	private RoomInfoBean roomInfoBean;
 	private UserBean userBean;
+	private List<UserBean> userList;
 	private UserDetailsBean userDetailsBean;
 	public int getCode() {
 		return code;
 	}
 	public void setCode(int code) {
 		this.code = code;
+	}
+	public List<UserBean> getUserList() {
+		return userList;
+	}
+	public void setUserList(List<UserBean> userList) {
+		this.userList = userList;
 	}
 	public String getMessage() {
 		return message;
